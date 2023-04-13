@@ -19,16 +19,24 @@ export default function App() {
       <NavigationContainer>
       <Stack.Navigator initialRouteName='IOU'>
         <Stack.Screen name="IOU" component={Home} options={{
-          title: "",
+          // title: "",
           headerShadowVisible: false,
-          headerLeft: () => (
-            <Image source={require("./assets/iou.png")} className="w-10 h-6 pl-3 rounded-auto"/>
-          ),
+          // headerLeft: () => (
+          //   <Image source={require("./assets/iou.png")} className="w-10 h-6 pl-3 rounded-auto"/>
+          // ),
           headerRight: () => (
             <TouchableOpacity>
-              <EvilIcons name="search" size={24} color="black" />
+              <EvilIcons name="search" size={24} color="white" />
             </TouchableOpacity>
-          )
+          ),
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            color: '#fff',
+            // fontFamily: 'Roboto'
+          },
+          headerStyle: {
+            backgroundColor: '#4B1EA2'
+          }
         }}/>
         <Stack.Screen name="Transactions" component={Transactions} options={{
           headerShadowVisible: false,
@@ -43,6 +51,7 @@ export default function App() {
       <View>
         <BottomNav />
       </View>
+      <StatusBar style='light'/>
       </NavigationContainer>
   );
 }

@@ -8,24 +8,24 @@ import { Octicons } from "@expo/vector-icons";
 export default function BottomNav() {
   const navigation = useNavigation();
   return (
-    <View className="h-12 mt-1">
-      <View className="flex flex-row items-center h-full justify-between mx-10">
+    <View className="h-14 mt-1">
+      <View className="flex flex-row items-center h-full justify-between mx-11">
         <View>
           <TouchableOpacity onPress={() => navigation.navigate("IOU")} className="flex justify-center items-center">
-            <AntDesign name="home" size={24} color="#31C48D" />
-            <Text className="color-logogreen">Home</Text>
+            <AntDesign name="home" size={28} color="#4B1EA2" />
+            {/* <Text className="color-logogreen">Home</Text> */}
           </TouchableOpacity>
         </View>
         <View>
           <TouchableOpacity onPress={() => navigation.navigate("Transactions")} className="flex justify-center items-center">
-            <MaterialIcons name="attach-money" size={24} color="#31C48D" />
-            <Text className="color-logogreen">Transactions</Text>
+            <MaterialIcons name="attach-money" size={28} color="#4B1EA2" />
+            {/* <Text className="color-logogreen">Transactions</Text> */}
           </TouchableOpacity>
         </View>
         <View>
           <TouchableOpacity onPress={() => navigation.navigate("Profile")} className="flex items-center">
-            <Octicons name="person" size={24} color="#31C48D" />
-            <Text className="color-logogreen">Profile</Text>
+            <Octicons name="person" size={28} color="#4B1EA2" />
+            {/* <Text className="color-logogreen">Profile</Text> */}
           </TouchableOpacity>
         </View>
       </View>
