@@ -1,9 +1,9 @@
-import { Link, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import { MaterialIcons } from "@expo/vector-icons";
-import { Octicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function BottomNav() {
   const navigation = useNavigation();
@@ -11,21 +11,18 @@ export default function BottomNav() {
     <View className="h-14 mt-1">
       <View className="flex flex-row items-center h-full justify-between mx-11">
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate("IOU")} className="flex justify-center items-center">
-            <AntDesign name="home" size={28} color="#4B1EA2" />
-            {/* <Text className="color-logogreen">Home</Text> */}
+          <TouchableOpacity onPress={() => navigation.navigate("IOU")} className="flex justify-center items-center p-2">
+            <AntDesign name="home" size={24} color="#4B1EA2" />
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate("Transactions")} className="flex justify-center items-center">
-            <MaterialIcons name="attach-money" size={28} color="#4B1EA2" />
-            {/* <Text className="color-logogreen">Transactions</Text> */}
+          <TouchableOpacity onPress={() => navigation.navigate("Transactions")} className="flex justify-center items-center p-2">
+            <MaterialCommunityIcons name="transfer" size={24} color="#4B1EA2" />
           </TouchableOpacity>
         </View>
         <View>
-          <TouchableOpacity onPress={() => navigation.navigate("Profile")} className="flex items-center">
-            <Octicons name="person" size={28} color="#4B1EA2" />
-            {/* <Text className="color-logogreen">Profile</Text> */}
+          <TouchableOpacity onPress={() => navigation.navigate("Profile")} className="flex items-center p-2">
+            <Ionicons name="person-outline" size={24} color="#4B1EA2" />
           </TouchableOpacity>
         </View>
       </View>
