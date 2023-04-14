@@ -7,6 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Home from './pages/Home';
 import Transactions from './pages/Transactions';
 import NewTransaction from './pages/NewTransaction';
+import ViewTransaction from './pages/ViewTransaction';
 // import { AntDesign } from "@expo/vector-icons";
 import { EvilIcons } from '@expo/vector-icons';
 import BottomNav from './components/BottomNav';
@@ -45,6 +46,9 @@ export default function App() {
           headerShadowVisible: false,
         }} />
         <Stack.Screen name="Profile" component={Profile} options={{
+          headerShadowVisible: false,
+        }} />
+        <Stack.Screen name="ViewTransaction" component={ViewTransaction} options={{
           headerShadowVisible: false,
         }} />
       </Stack.Navigator>
