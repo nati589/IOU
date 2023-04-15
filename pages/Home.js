@@ -4,9 +4,13 @@ import { AntDesign } from "@expo/vector-icons";
 import TransactionCard from "../components/TransactionCard";
 import { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
-import { Octicons } from '@expo/vector-icons';
+import { Octicons } from "@expo/vector-icons";
+import { useSelector } from "react-redux";
 
 export default function Home({ navigation }) {
+  const total = useSelector((state) => state.home.total)
+  const debit = useSelector((state) => state.home.debit)
+  const credit = useSelector((state) => state.home.credit)
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -22,7 +26,7 @@ export default function Home({ navigation }) {
             <Text className="text-center text-white/60">Balance</Text>
             <View className="flex-row mt-6 gap-x-2">
               <Text className="font-bold text-white text-3xl">
-                2,456,321.00
+                {total}
               </Text>
               <Text className="text-white">ETB</Text>
             </View>
@@ -30,14 +34,15 @@ export default function Home({ navigation }) {
           <View className="mt-9">
             <View className="flex-row justify-between">
               <Text className="text-white/70">Debit Amount</Text>
-              <Text className="text-sm text-error/100">2,311 ETB</Text>
+              <Text className="text-sm text-error/100">{debit} ETB</Text>
             </View>
             <View className="flex-row justify-between">
               <Text className="text-white/70">Credit Amount</Text>
-              <Text className="text-sm text-low">1,453 ETB</Text>
+              <Text className="text-sm text-low">{credit} ETB</Text>
             </View>
           </View>
         </View>
+        {/* Filters */}
         <View className="flex-row z-10 mt-4 w-full justify-between items-end">
           <Text className="">Transactions</Text>
           <View className="w-12">
@@ -49,25 +54,32 @@ export default function Home({ navigation }) {
               setValue={setValue}
               setItems={setItems}
               style={{
-                borderColor: '#ccc',
+                borderColor: "#ccc",
                 borderBottomEndRadius: 10,
                 borderBottomStartRadius: 10,
               }}
               dropDownContainerStyle={{
-                borderColor: '#ccc',
+                borderColor: "#ccc",
                 marginTop: 12,
                 borderRadius: 10,
                 borderTopEndRadius: 10,
                 borderTopStartRadius: 10,
                 shadowRadius: 3,
-                shadowColor: '#f00',
+                shadowColor: "#f00",
                 width: 100,
-                alignContent: 'flex-start', 
+                alignContent: "flex-start",
               }}
               placeholder=""
               // showArrowIcon={false}
-              ArrowDownIconComponent={({style}) => <Octicons name="filter" size={24} color="black" style={style} />}
-              ArrowUpIconComponent={({style}) => <Octicons name="filter" size={24} color="black" style={style} />}
+              ArrowDownIconComponent={({ style }) => (
+                <Octicons name="filter" size={24} color="black" style={style} />
+              )}
+              ArrowUpIconComponent={({ style }) => (
+                <Octicons name="filter" size={24} color="black" style={style} />
+              )}
+              // containerStyle={
+                
+              // }
               // arrowIconStyle={{
               //   marginRight: 100
               // }}
@@ -78,7 +90,7 @@ export default function Home({ navigation }) {
             />
           </View>
         </View>
-
+        {/* Cards  */}
         <FlatList
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           renderItem={({ item }) => <TransactionCard />}

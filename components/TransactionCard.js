@@ -10,7 +10,7 @@ export default function TransactionCard() {
     "my-2 rounded-md h-18 bg-white border-l-3 border-mid",
     "my-2 rounded-md h-18 bg-white border-l-3 border-high",
   ];
-  const type = ['text-success font-semibold text-lg', 'text-error font-semibold text-lg']
+  const type = ['text-success font-semibold text-md', 'text-error font-semibold text-md']
   let x = Math.floor(Math.random() * 3);
   let y = Math.floor(Math.random() * 2);
   return (
@@ -27,7 +27,7 @@ export default function TransactionCard() {
               <Text className="text-sm text-black/20">Tue Mar 14</Text>
             </View>
           </View>
-          <Text className={type[y]}>$145</Text>
+          <Text className={type[y]}>145 ETB</Text>
         </View>
       </View>
     </TouchableOpacity>
