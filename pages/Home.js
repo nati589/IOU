@@ -8,9 +8,9 @@ import { Octicons } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
 
 export default function Home({ navigation }) {
-  const total = useSelector((state) => state.home.total)
-  const debit = useSelector((state) => state.home.debit)
-  const credit = useSelector((state) => state.home.credit)
+  const total = useSelector((state) => state.home.total);
+  const debit = useSelector((state) => state.home.debit);
+  const credit = useSelector((state) => state.home.credit);
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
@@ -25,27 +25,33 @@ export default function Home({ navigation }) {
           <View className="self-center">
             <Text className="text-center text-white/60">Balance</Text>
             <View className="flex-row mt-6 gap-x-2">
-              <Text className="font-bold text-white text-3xl">
-                {total}
-              </Text>
+              <Text className="font-bold text-white text-3xl">{total}</Text>
               <Text className="text-white">ETB</Text>
             </View>
           </View>
           <View className="mt-9">
             <View className="flex-row justify-between">
-              <Text className="text-white/70">Debit Amount</Text>
-              <Text className="text-sm text-error/100">{debit} ETB</Text>
+              <Text className="text-white/70">Credit Amount</Text>
+              <View className="flex-row gap-2">
+                <Text className="text-sm text-white">{credit} ETB</Text>
+                <AntDesign name="arrowup" size={20} color="white" />
+              </View>
             </View>
             <View className="flex-row justify-between">
-              <Text className="text-white/70">Credit Amount</Text>
-              <Text className="text-sm text-low">{credit} ETB</Text>
+              <Text className="text-white/70">Debit Amount</Text>
+              <View className="flex-row gap-2">
+                <Text className="text-sm text-white">{debit} ETB</Text>
+                <AntDesign name="arrowdown" size={20} color="white" />
+              </View>
             </View>
           </View>
         </View>
         {/* Filters */}
         <View className="flex-row z-10 mt-4 w-full justify-between items-end">
-          <Text className="">Transactions</Text>
-          <View className="w-12">
+          <TouchableOpacity>
+            <Text className="">Transactions</Text>
+          </TouchableOpacity>
+          <View className="w-24">
             <DropDownPicker
               open={open}
               value={value}
@@ -69,7 +75,7 @@ export default function Home({ navigation }) {
                 width: 100,
                 alignContent: "flex-start",
               }}
-              placeholder=""
+              placeholder="Filter"
               // showArrowIcon={false}
               ArrowDownIconComponent={({ style }) => (
                 <Octicons name="filter" size={24} color="black" style={style} />
@@ -78,7 +84,7 @@ export default function Home({ navigation }) {
                 <Octicons name="filter" size={24} color="black" style={style} />
               )}
               // containerStyle={
-                
+
               // }
               // arrowIconStyle={{
               //   marginRight: 100

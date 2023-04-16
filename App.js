@@ -59,6 +59,11 @@ export default function App() {
                 backgroundColor: "#4B1EA2",
                 color: '#fff'
               },
+              headerRight: () => (
+                <TouchableOpacity>
+                  <EvilIcons name="search" size={24} color="white" />
+                </TouchableOpacity>
+              ),
             }}
           />
           <Stack.Screen

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     hi: 'hello',
-    total: '2,456,321.00',
+    total: '2,456.00',
     credit: "1,453",
     debit: "2,311",
 }
