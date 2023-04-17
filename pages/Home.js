@@ -18,7 +18,7 @@ export default function Home({ navigation }) {
     { label: "Debit", value: "debit" },
   ]);
   return (
-    <SafeAreaView className="bg-accent/60">
+    <View className="bg-accent/60">
       <View className="flex h-full mx-6">
         {/* Top Card  */}
         <View className="w-full p-6 flex h-auto bg-primary rounded-2xl">
@@ -110,6 +110,6 @@ export default function Home({ navigation }) {
           <AntDesign name="plus" size={30} color="white" />
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
