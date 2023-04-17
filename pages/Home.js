@@ -6,6 +6,7 @@ import { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
 import { Octicons } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
+import BottomNav from "../components/BottomNav";
 
 export default function Home({ navigation }) {
   const total = useSelector((state) => state.home.total);
@@ -18,7 +19,7 @@ export default function Home({ navigation }) {
     { label: "Debit", value: "debit" },
   ]);
   return (
-    <View className="bg-accent/60">
+    <SafeAreaView className="bg-accent/60">
       <View className="flex h-full mx-6">
         {/* Top Card  */}
         <View className="w-full p-6 flex h-auto bg-primary rounded-2xl">
@@ -110,6 +111,10 @@ export default function Home({ navigation }) {
           <AntDesign name="plus" size={30} color="white" />
         </TouchableOpacity>
       </View>
-    </View>
+      {/* <View> */}
+        {/* <Text>hi</Text> */}
+      {/* <BottomNav /> */}
+      {/* </View> */}
+    </SafeAreaView>
   );
 }
