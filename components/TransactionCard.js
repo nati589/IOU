@@ -6,9 +6,9 @@ import { Text, TouchableOpacity, View } from "react-native";
 export default function TransactionCard() {
   const navigation = useNavigation();
   const priorities = [
-    "my-2 rounded-md h-18 bg-white border-l-3 border-low",
-    "my-2 rounded-md h-18 bg-white border-l-3 border-mid",
-    "my-2 rounded-md h-18 bg-white border-l-3 border-high",
+    "my-2 rounded-md h-18 bg-accent/30 border-l-3 border-low",
+    "my-2 rounded-md h-18 bg-accent/30 border-l-3 border-mid",
+    "my-2 rounded-md h-18 bg-accent/30 border-l-3 border-high",
   ];
   const type = ['text-success font-semibold text-md', 'text-error font-semibold text-md']
   let x = Math.floor(Math.random() * 3);

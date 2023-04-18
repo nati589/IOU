@@ -6,7 +6,7 @@ import { useState } from "react";
 import DropDownPicker from "react-native-dropdown-picker";
 import { Octicons } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
-import BottomNav from "../components/BottomNav";
+import { Link } from "@react-navigation/native";
 
 export default function Home({ navigation }) {
   const total = useSelector((state) => state.home.total);
@@ -19,40 +19,32 @@ export default function Home({ navigation }) {
     { label: "Debit", value: "debit" },
   ]);
   return (
-    <SafeAreaView className="bg-accent/60">
+    <SafeAreaView className="bg-white">
       <View className="flex h-full mx-6">
         {/* Top Card  */}
-        <View className="w-full p-6 flex h-auto bg-primary rounded-2xl">
-          <View className="self-center">
-            <Text className="text-center text-white/60">Balance</Text>
-            <View className="flex-row mt-6 gap-x-2">
-              <Text className="font-bold text-white text-3xl">{total}</Text>
+        <View className="w-full p-6 flex h-auto bg-primary rounded-2xl flex-row items-center justify-between">
+          <View>
+            <Text className="text-white/60">Balance</Text>
+            <View className="flex-row mt-2 mb-1 gap-x-2">
+              <Text className="font-bold text-white text-4xl">{total}</Text>
               <Text className="text-white">ETB</Text>
             </View>
           </View>
-          <View className="mt-9">
-            <View className="flex-row justify-between">
-              <Text className="text-white/70">Credit Amount</Text>
-              <View className="flex-row gap-2">
-                <Text className="text-sm text-white">{credit} ETB</Text>
-                <AntDesign name="arrowup" size={20} color="white" />
-              </View>
+          <View className="">
+            <View className="flex-row gap-x-2 mr-2 items-center">
+              <AntDesign name="arrowup" size={15} color="red" />
+              <Text className="text-sm/10 text-white/60">{credit}.00</Text>
             </View>
-            <View className="flex-row justify-between">
-              <Text className="text-white/70">Debit Amount</Text>
-              <View className="flex-row gap-2">
-                <Text className="text-sm text-white">{debit} ETB</Text>
-                <AntDesign name="arrowdown" size={20} color="white" />
-              </View>
+            <View className="flex-row gap-x-2 items-center">
+              <AntDesign name="arrowdown" size={15} color="green" />
+              <Text className="text-sm/10 text-white/60">{debit}.00</Text>
             </View>
           </View>
         </View>
-        {/* Filters */}
-        <View className="flex-row z-10 mt-4 w-full justify-between items-end">
-          <TouchableOpacity>
-            <Text className="">Transactions</Text>
-          </TouchableOpacity>
-          <View className="w-24">
+        {/* Recents */}
+        <View className="flex-row mt-4 w-full justify-between items-end">
+          <Text className="">Transactions</Text>
+          {/* <View className="w-24">
             <DropDownPicker
               open={open}
               value={value}
@@ -95,7 +87,13 @@ export default function Home({ navigation }) {
               }}
               // className="w-12"
             />
-          </View>
+          </View> */}
+          <TouchableOpacity
+            className="flex-row gap-x-2 items-center"
+            onPress={() => navigation.navigate("Transactions")}>
+            <Text className="text-primary">View All</Text>
+            <AntDesign name="right" size={18} color="#4B1EA2" />
+          </TouchableOpacity>
         </View>
         {/* Cards  */}
         <FlatList
@@ -111,10 +109,6 @@ export default function Home({ navigation }) {
           <AntDesign name="plus" size={30} color="white" />
         </TouchableOpacity>
       </View>
-      {/* <View> */}
-        {/* <Text>hi</Text> */}
-      {/* <BottomNav /> */}
-      {/* </View> */}
     </SafeAreaView>
   );
 }

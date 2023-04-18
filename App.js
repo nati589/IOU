@@ -16,17 +16,12 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback, useEffect, useState } from "react";
-// import * as Font from "expo-font";
-// import Entypo from "@expo/vector-icons/Entypo";
-
-// SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
     <Provider store={store}>
       <NavigationContainer>
-        {/* <SafeAreaView> */}
         <Stack.Navigator initialRouteName="IOU">
           <Stack.Screen
             name="IOU"
@@ -99,12 +94,8 @@ export default function App() {
             }}
           />
         </Stack.Navigator>
-        {/* <View className='absolute bottom-0 left-0 right-0 h-20'> */}
       <BottomNav />
-
-        {/* </View> */}
         <StatusBar style="light" />
-      {/* </SafeAreaView> */}
       </NavigationContainer>
     </Provider>
   );

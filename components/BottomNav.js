@@ -9,6 +9,7 @@ export default function BottomNav() {
   const navigation = useNavigation();
   const iconSize = 26;
   const iconColor = "#4B1EA2";
+  console.log(navigation)
 
   return (
     <View className="h-11 mt-1">
