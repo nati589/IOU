@@ -8,7 +8,7 @@ import { Ionicons } from "@expo/vector-icons";
 export default function BottomNav() {
   const navigation = useNavigation();
   const iconSize = 26;
-  const iconColor = "#4B1EA2";
+  const iconColor = "#02115B";
   console.log(navigation)
 
   return (

@@ -38,7 +38,7 @@ export default function App() {
                 color: "#fff",
               },
               headerStyle: {
-                backgroundColor: "#4B1EA2",
+                backgroundColor: "#02115B",
               },
             }}
           />
