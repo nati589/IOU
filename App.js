@@ -94,7 +94,7 @@ export default function App() {
             }}
           />
         </Stack.Navigator>
-      <BottomNav />
+      {/* <BottomNav /> */}
         <StatusBar style="light" />
       </NavigationContainer>
     </Provider>

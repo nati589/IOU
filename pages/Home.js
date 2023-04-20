@@ -1,4 +1,4 @@
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
 import TransactionCard from "../components/TransactionCard";
@@ -8,6 +8,7 @@ import { Octicons } from "@expo/vector-icons";
 import { useSelector } from "react-redux";
 import { Link } from "@react-navigation/native";
 import PriorityCard from "../components/PriorityCard";
+import BottomNav from "../components/BottomNav";
 
 export default function Home({ navigation }) {
   const total = useSelector((state) => state.home.total);
@@ -89,18 +90,28 @@ export default function Home({ navigation }) {
           </TouchableOpacity>
         </View>
         {/* Cards  */}
-        <FlatList
+        <ScrollView className='mt-4'>
+          {/* <View> */}
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
+            return (<TransactionCard key={item}/>)
+          })}
+        {/* <FlatList
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
           renderItem={({ item }) => <TransactionCard />}
           keyExtractor={(item) => item}
           className="mt-4"
-        />
+        /> */}
+          {/* </View> */}
+
+        </ScrollView>
+
         {/* </View> */}
         <TouchableOpacity
-          className="flex-row absolute items-center justify-center p-4 w-auto bottom-2 right-0 rounded-full bg-primary"
+          className="flex-row absolute items-center justify-center p-4 w-auto bottom-14 right-0 rounded-full bg-primary"
           onPress={() => navigation.navigate("NewTransaction")}>
           <AntDesign name="plus" size={30} color="white" />
         </TouchableOpacity>
+      <BottomNav />
       </View>
     </SafeAreaView>
   );
