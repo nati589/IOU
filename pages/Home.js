@@ -81,55 +81,11 @@ export default function Home({ navigation }) {
         {/* Recents */}
         <View className="flex-row mt-4 w-full justify-between items-end">
           <Text className="">Transactions</Text>
-          {/* <View className="w-24">
-            <DropDownPicker
-              open={open}
-              value={value}
-              items={items}
-              setOpen={setOpen}
-              setValue={setValue}
-              setItems={setItems}
-              style={{
-                borderColor: "#ccc",
-                borderBottomEndRadius: 10,
-                borderBottomStartRadius: 10,
-              }}
-              dropDownContainerStyle={{
-                borderColor: "#ccc",
-                marginTop: 12,
-                borderRadius: 10,
-                borderTopEndRadius: 10,
-                borderTopStartRadius: 10,
-                shadowRadius: 3,
-                shadowColor: "#f00",
-                width: 100,
-                alignContent: "flex-start",
-              }}
-              placeholder="Filter"
-              // showArrowIcon={false}
-              ArrowDownIconComponent={({ style }) => (
-                <Octicons name="filter" size={24} color="black" style={style} />
-              )}
-              ArrowUpIconComponent={({ style }) => (
-                <Octicons name="filter" size={24} color="black" style={style} />
-              )}
-              // containerStyle={
-
-              // }
-              // arrowIconStyle={{
-              //   marginRight: 100
-              // }}
-              onChangeValue={(item) => {
-                console.log(value);
-              }}
-              // className="w-12"
-            />
-          </View> */}
           <TouchableOpacity
             className="flex-row gap-x-2 items-center"
             onPress={() => navigation.navigate("Transactions")}>
             <Text className="text-primary">View All</Text>
-            <AntDesign name="right" size={18} color="#4B1EA2" />
+            <AntDesign name="right" size={18} color="#02115B" />
           </TouchableOpacity>
         </View>
         {/* Cards  */}
