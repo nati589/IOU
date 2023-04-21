@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/iou.png",
       "resizeMode": "contain",
-      "backgroundColor": "#4B1EA2"
+      "backgroundColor": "#02115B"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -25,6 +25,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-contacts",
+        {
+          "contactsPermission": "Allow $(PRODUCT_NAME) to access your contacts."
+        }
+      ]
+    ]
   }
 }

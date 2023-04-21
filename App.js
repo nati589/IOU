@@ -67,7 +67,16 @@ export default function App() {
             name="NewTransaction"
             component={NewTransaction}
             options={{
+              title: 'New Transaction',
               headerShadowVisible: false,
+              headerTitleAlign: "center",
+              headerTitleStyle: {
+                color: "#fff",
+              },
+              headerStyle: {
+                backgroundColor: "#02115B",
+              },
+              disable
             }}
           />
           <Stack.Screen
