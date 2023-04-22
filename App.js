@@ -16,6 +16,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback, useEffect, useState } from "react";
+import { color } from "@rneui/base";
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -30,15 +31,15 @@ export default function App() {
               headerShadowVisible: false,
               headerRight: () => (
                 <TouchableOpacity>
-                  <EvilIcons name="search" size={24} color="white" />
+                  <EvilIcons name="search" size={24} color="#02115B" />
                 </TouchableOpacity>
               ),
               headerTitleAlign: "center",
               headerTitleStyle: {
-                color: "#fff",
+                color: "#02115B",
               },
               headerStyle: {
-                backgroundColor: "#02115B",
+                backgroundColor: "#fff",
               },
             }}
           />
@@ -71,12 +72,11 @@ export default function App() {
               headerShadowVisible: false,
               headerTitleAlign: "center",
               headerTitleStyle: {
-                color: "#fff",
+                color: "#02115B",
               },
               headerStyle: {
-                backgroundColor: "#02115B",
+                backgroundColor: "#fff",
               },
-              disable
             }}
           />
           <Stack.Screen
@@ -104,7 +104,7 @@ export default function App() {
           />
         </Stack.Navigator>
       {/* <BottomNav /> */}
-        <StatusBar style="light" />
+        <StatusBar style="dark" />
       </NavigationContainer>
     </Provider>
   );
