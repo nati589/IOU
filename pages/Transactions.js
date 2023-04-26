@@ -4,6 +4,7 @@ import TransactionCard from "../components/TransactionCard";
 import DropDownPicker from "react-native-dropdown-picker";
 import { useState } from "react";
 import { Octicons } from "@expo/vector-icons";
+import { Chip } from "@rneui/themed";
 
 export default function Transactions() {
   const [open, setOpen] = useState(false);
@@ -20,8 +21,8 @@ export default function Transactions() {
           <TouchableOpacity>
             <Text className="">Transactions</Text>
           </TouchableOpacity>
-          <View className="flex-row gap-2">
-            <View className="w-24">
+          <View>
+            {/* <View className="w-24">
               <DropDownPicker
                 open={open}
                 value={value}
@@ -66,52 +67,20 @@ export default function Transactions() {
                   console.log(value);
                 }}
               />
-            </View>
-            <View className="w-24">
-              <DropDownPicker
-                open={open}
-                value={value}
-                items={items}
-                setOpen={setOpen}
-                setValue={setValue}
-                setItems={setItems}
-                style={{
-                  borderColor: "#ccc",
-                  borderBottomEndRadius: 10,
-                  borderBottomStartRadius: 10,
-                }}
-                dropDownContainerStyle={{
-                  borderColor: "#ccc",
-                  marginTop: 12,
-                  borderRadius: 10,
-                  borderTopEndRadius: 10,
-                  borderTopStartRadius: 10,
-                  shadowRadius: 3,
-                  shadowColor: "#f00",
-                  width: 100,
-                  alignContent: "flex-start",
-                }}
-                placeholder="Filter"
-                ArrowDownIconComponent={({ style }) => (
-                  <Octicons
-                    name="filter"
-                    size={24}
-                    color="black"
-                    style={style}
-                  />
-                )}
-                ArrowUpIconComponent={({ style }) => (
-                  <Octicons
-                    name="filter"
-                    size={24}
-                    color="black"
-                    style={style}
-                  />
-                )}
-                onChangeValue={(item) => {
-                  console.log(value);
-                }}
-              />
+            </View> */}
+            <View className="flex-row gap-x-2 ">
+              {
+                (['Credit', 'Debit', 'Complete', 'Overdue']).map((item, index) => {
+                  return (
+                    <Chip
+                      title={item}
+                      type="outline"
+                      containerStyle={{ marginVertical: 5 }}
+                      key={index}
+                    />
+                  )
+                })
+              }
             </View>
           </View>
         </View>
