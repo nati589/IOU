@@ -5,6 +5,7 @@ import DropDownPicker from "react-native-dropdown-picker";
 import { useState } from "react";
 import { Octicons } from "@expo/vector-icons";
 import { Chip } from "@rneui/themed";
+import BottomNav from "../components/BottomNav";
 
 export default function Transactions() {
   const [open, setOpen] = useState(false);
@@ -15,14 +16,10 @@ export default function Transactions() {
     { label: "Complete", value: "complete" },
   ]);
   return (
-    <SafeAreaView className="bg-accent/60">
+    <SafeAreaView className="bg-white">
       <View className="flex h-full mx-6">
-        <View className="flex-row z-10 w-full justify-between items-end">
-          <TouchableOpacity>
-            <Text className="">Transactions</Text>
-          </TouchableOpacity>
-          <View>
-            {/* <View className="w-24">
+        <View>
+          {/* <View className="w-24">
               <DropDownPicker
                 open={open}
                 value={value}
@@ -68,21 +65,25 @@ export default function Transactions() {
                 }}
               />
             </View> */}
-            <View className="flex-row gap-x-2 ">
-              {
-                (['Credit', 'Debit', 'Complete', 'Overdue']).map((item, index) => {
-                  return (
-                    <Chip
-                      title={item}
-                      type="outline"
-                      containerStyle={{ marginVertical: 5 }}
-                      key={index}
-                    />
-                  )
-                })
+          <View className="flex-row gap-x-2 ">
+            {["Credit", "Debit", "Complete", "Overdue", "Deleted"].map(
+              (item, index) => {
+                return (
+                  <Chip
+                    title={item}
+                    type="outline"
+                    containerStyle={{ marginVertical: 5 }}
+                    key={index}
+                  />
+                );
               }
-            </View>
+            )}
           </View>
+        </View>
+        <View className="flex-row z-10 w-full justify-between items-end mt-2">
+          <TouchableOpacity>
+            <Text className="">Transactions</Text>
+          </TouchableOpacity>
         </View>
         <FlatList
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]}
@@ -90,6 +91,7 @@ export default function Transactions() {
           keyExtractor={(item) => item}
           className="mt-4"
         />
+        <BottomNav />
       </View>
     </SafeAreaView>
   );
