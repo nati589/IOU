@@ -9,8 +9,10 @@ import { useSelector } from "react-redux";
 import { Link } from "@react-navigation/native";
 import PriorityCard from "../components/PriorityCard";
 import BottomNav from "../components/BottomNav";
+// import colors from "tailwindcss/colors";
 
 export default function Home({ navigation }) {
+  // console.log(colors);
   const total = useSelector((state) => state.home.total);
   const debit = useSelector((state) => state.home.debit);
   const credit = useSelector((state) => state.home.credit);
@@ -80,7 +82,7 @@ export default function Home({ navigation }) {
           </View>
         </View>
         {/* Recents */}
-        <View className="flex-row mt-4 w-full justify-between items-end">
+        <View className="flex-row mt-0 w-full justify-between items-end">
           <Text className="">Transactions</Text>
           <TouchableOpacity
             className="flex-row gap-x-2 items-center"
@@ -91,21 +93,10 @@ export default function Home({ navigation }) {
         </View>
         {/* Cards  */}
         <ScrollView className='mt-4'>
-          {/* <View> */}
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
             return (<TransactionCard key={item}/>)
           })}
-        {/* <FlatList
-          data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
-          renderItem={({ item }) => <TransactionCard />}
-          keyExtractor={(item) => item}
-          className="mt-4"
-        /> */}
-          {/* </View> */}
-
         </ScrollView>
-
-        {/* </View> */}
         <TouchableOpacity
           className="flex-row absolute items-center justify-center p-4 w-auto bottom-14 right-0 rounded-full bg-primary"
           onPress={() => navigation.navigate("NewTransaction")}>

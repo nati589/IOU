@@ -1,4 +1,10 @@
-import { FlatList, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import TransactionCard from "../components/TransactionCard";
 import DropDownPicker from "react-native-dropdown-picker";
@@ -70,7 +76,10 @@ export default function Transactions() {
                 }}
               />
             </View> */}
-          <View className="flex-row gap-x-2 ">
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            className="flex-row gap-x-2 ">
             {["Credit", "Debit", "Complete", "Overdue", "Deleted"].map(
               (item, index) => {
                 return (
@@ -79,18 +88,24 @@ export default function Transactions() {
                     type="outline"
                     containerStyle={{ marginVertical: 5 }}
                     key={index}
-                    color='success'
+                    titleStyle={{
+                      color: "#4B1EA2",
+                    }}
+                    buttonStyle={{
+                      borderColor: "#4B1EA2",
+                      marginRight: 10,
+                    }}
                   />
                 );
               }
             )}
-          </View>
+          </ScrollView>
         </View>
         <FlatList
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]}
           renderItem={({ item }) => <TransactionCard />}
           keyExtractor={(item) => item}
-          className="mt-4"
+          className="mt-2"
         />
         <BottomNav />
       </View>

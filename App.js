@@ -30,12 +30,12 @@ export default function App() {
               headerShadowVisible: false,
               headerRight: () => (
                 <TouchableOpacity>
-                  <EvilIcons name="search" size={24} color="#02115B" />
+                  <EvilIcons name="search" size={24} color="#4B1EA2" />
                 </TouchableOpacity>
               ),
               headerTitleAlign: "center",
               headerTitleStyle: {
-                color: "#02115B",
+                color: "#4B1EA2",
               },
               headerStyle: {
                 backgroundColor: "#fff",
