@@ -1,8 +1,8 @@
 import React from 'react'
 import { Text } from 'react-native'
 
-export default function ViewTransaction() {
+export default function ViewUser() {
   return (
-    <Text>ViewTransaction</Text>
+    <Text>ViewUser</Text>
   )
 }

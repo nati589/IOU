@@ -18,6 +18,11 @@ export default function Transactions() {
   return (
     <SafeAreaView className="bg-white">
       <View className="flex h-full mx-6">
+        {/* <View className="flex-row z-10 w-full justify-between items-end mb-2">
+          <TouchableOpacity>
+            <Text className="">Transactions</Text>
+          </TouchableOpacity>
+        </View> */}
         <View>
           {/* <View className="w-24">
               <DropDownPicker
@@ -74,16 +79,12 @@ export default function Transactions() {
                     type="outline"
                     containerStyle={{ marginVertical: 5 }}
                     key={index}
+                    color='success'
                   />
                 );
               }
             )}
           </View>
-        </View>
-        <View className="flex-row z-10 w-full justify-between items-end mt-2">
-          <TouchableOpacity>
-            <Text className="">Transactions</Text>
-          </TouchableOpacity>
         </View>
         <FlatList
           data={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]}

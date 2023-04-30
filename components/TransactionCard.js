@@ -14,7 +14,7 @@ export default function TransactionCard() {
   let x = Math.floor(Math.random() * 3);
   let y = Math.floor(Math.random() * 2);
   return (
-    <TouchableOpacity className={priorities[x]} onPress={() => navigation.navigate("ViewTransaction")}>
+    <TouchableOpacity className={priorities[x]} onPress={() => navigation.navigate("ViewUser")}>
       <View className="mx-4 my-2 h-14">
         <View className="flex-row justify-between h-full items-center">
           <View className="flex-row">
