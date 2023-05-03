@@ -1,4 +1,10 @@
-import { FlatList, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
 import TransactionCard from "../components/TransactionCard";
@@ -23,7 +29,7 @@ export default function Home({ navigation }) {
     { label: "Debit", value: "debit" },
   ]);
   return (
-    <SafeAreaView className="bg-white">
+    <View className="bg-white">
       <View className="flex h-full mx-6">
         {/* Top Card  */}
         <View className="w-full p-6 flex h-auto bg-primary rounded-2xl">
@@ -52,19 +58,35 @@ export default function Home({ navigation }) {
           </View>
         </View>
         {/* Priorities */}
-        <View className="flex flex-row justify-between items-center my-4">
+        <View className="flex flex-row justify-between items-center my-4 gap-x-2">
           {/* {[0, 1, 2].map((item) => {
             return <PriorityCard level={item} key={item} />;
           })} */}
-          <View className="bg-low/10 rounded-lg py-4 px-2">
-            <View className="w-14 rounded-md justify-center items-center py-1 mx-4 bg-low/20">
-              <Text className="text-2xl text-low" numberOfLines={1}>
+          <View className="bg-low/10 rounded-lg px-4 py-2">
+            <View className="rounded-md justify-center items-center py-1 mx-2 bg-low/20">
+              <Text className="text-2xl text-low px-2" numberOfLines={1}>
                 {21}
               </Text>
             </View>
             <Text className="text-center text-low pt-1">Low</Text>
           </View>
-          <View className="bg-mid/10 rounded-lg py-4 px-2">
+          <View className="bg-mid/10 rounded-lg px-4 py-2">
+            <View className="rounded-md justify-center items-center py-1 mx-2 bg-mid/20">
+              <Text className="text-2xl text-mid px-2" numberOfLines={1}>
+                {21}
+              </Text>
+            </View>
+            <Text className="text-center text-mid pt-1">Low</Text>
+          </View>
+          <View className="bg-high/10 rounded-lg px-4 py-2">
+            <View className="rounded-md justify-center items-center py-1 mx-2 bg-high/20">
+              <Text className="text-2xl text-high px-2" numberOfLines={1}>
+                {21}
+              </Text>
+            </View>
+            <Text className="text-center text-high pt-1">Low</Text>
+          </View>
+          {/* <View className="bg-mid/10 rounded-lg py-4 px-2">
             <View className="w-14 rounded-md justify-center items-center py-1 mx-4 bg-mid/20">
               <Text className="text-2xl text-mid" numberOfLines={1}>
                 {12}
@@ -79,7 +101,7 @@ export default function Home({ navigation }) {
               </Text>
             </View>
             <Text className="text-center text-high pt-1">High</Text>
-          </View>
+          </View> */}
         </View>
         {/* Recents */}
         <View className="flex-row mt-0 w-full justify-between items-end">
@@ -92,9 +114,9 @@ export default function Home({ navigation }) {
           </TouchableOpacity>
         </View>
         {/* Cards  */}
-        <ScrollView className='mt-4'>
+        <ScrollView className="mt-4">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => {
-            return (<TransactionCard key={item}/>)
+            return <TransactionCard key={item} />;
           })}
         </ScrollView>
         <TouchableOpacity
@@ -102,8 +124,8 @@ export default function Home({ navigation }) {
           onPress={() => navigation.navigate("NewTransaction")}>
           <AntDesign name="plus" size={30} color="white" />
         </TouchableOpacity>
-      <BottomNav />
+        <BottomNav />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }

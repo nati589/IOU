@@ -22,7 +22,7 @@ export default function Transactions() {
     { label: "Complete", value: "complete" },
   ]);
   return (
-    <SafeAreaView className="bg-white">
+    <View className="bg-white">
       <View className="flex h-full mx-6">
         {/* <View className="flex-row z-10 w-full justify-between items-end mb-2">
           <TouchableOpacity>
@@ -109,6 +109,6 @@ export default function Transactions() {
         />
         <BottomNav />
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
