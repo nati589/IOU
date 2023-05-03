@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/iou.png",
       "resizeMode": "contain",
-      "backgroundColor": "#02115B"
+      "backgroundColor": "#4B1EA2"
     },
     "assetBundlePatterns": [
       "**/*"
